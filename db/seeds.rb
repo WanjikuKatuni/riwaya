@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Book.create(title: "Wahala", description:"lorem lorem lorem")
+# Book.create(title: "Africans", description:"lorem lorem lorem")
+# Book.create(title: "Sex Lives of African Women", description:"lorem lorem lorem")
+
+# Book.create([{title: "Wahala", description:"lorem lorem lorem"}, {title: "Africans", description:"lorem lorem lorem"}, {title: "Sex Lives of African Women", description:"lorem lorem lorem"}])
+
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre)
