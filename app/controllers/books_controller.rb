@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
     def index
-        render json:{hello: "riwaya world"}
+        books = Book.all
+        render json: books
     end
+
+  
     
 end

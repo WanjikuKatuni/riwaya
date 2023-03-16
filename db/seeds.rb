@@ -13,3 +13,6 @@
 # Book.create([{title: "Wahala", description:"lorem lorem lorem"}, {title: "Africans", description:"lorem lorem lorem"}, {title: "Sex Lives of African Women", description:"lorem lorem lorem"}])
 
 Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre)
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre)
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre)
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre)
