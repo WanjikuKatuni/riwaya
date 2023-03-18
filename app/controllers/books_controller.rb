@@ -14,11 +14,11 @@ class BooksController < ApplicationController
     # show book by ID
 
     def show
-        book = Book.find_by(id: params[:id])
+        book = find_book
         if book
             render json: book,  except: [:id, :created_at, :updated_at], methods: [:title_author], status: :ok
         else
-            render json: {error: "Book not found"}, status: :not_found
+            render_not_found_response
         end
     end
 
@@ -33,13 +33,13 @@ class BooksController < ApplicationController
 
     def update 
         # find
-        book = Book.find_by(id: params[:id])
+        book = find_book
         if book
             # update
             book.update(book_params)
             render json: book, status: :accepted
         else
-            render json: {error: "Book not found"}, status: :not_found
+            render_not_found_response
         end
     end
 
@@ -47,14 +47,14 @@ class BooksController < ApplicationController
 
     def destroy
         # find book
-        book = Book.find_by(id: params[:id])
+        book = find_book
         if book
             # delete
             book.destroy
             render json: {}
             # head :no_content
         else
-            render json: {error: "Book not found"}, status: :not_found
+            render_not_found_response
         end
     end
 
@@ -65,12 +65,12 @@ class BooksController < ApplicationController
 
     # increment likes
     def increment_likes
-        book = Book.find_by(id: params[:id])
+        book = find_book
         if book
             book.update(likes: book.likes + 1)
             render json: book
         else
-            render json: {error: "Book not found"}, status: :not_found
+            render_not_found_response
         end
     end
 
@@ -80,6 +80,16 @@ class BooksController < ApplicationController
 
     def book_params
         params.permit(:title, :author, :genre, :image)
+    end
+    
+    # not found
+    def render_not_found_response
+        render json: {error: "Book not found"}, status: :not_found
+    end
+
+    # find book
+    def find_book
+        Book.find_by(id: params[:id])
     end
 
 
