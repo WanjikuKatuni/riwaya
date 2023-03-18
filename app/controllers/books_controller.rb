@@ -45,6 +45,22 @@ class BooksController < ApplicationController
 
 
 
+
+
+
+    # increment likes
+    def increment_likes
+        book = Book.find_by(id: params[:id])
+        if book
+            book.update(likes: book.likes + 1)
+            render json: book
+        else
+            render json: {error: "Book not found"}, status: :not_found
+        end
+    end
+
+
+
     private
 
     def book_params

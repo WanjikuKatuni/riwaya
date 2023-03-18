@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   # resource
   resources :books, only: [:index, :show, :create, :update]
+  # custom like route
+  patch "/books/:id/like", to: "books#increment_likes"
 end
