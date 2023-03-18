@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   # resource
-  resources :books, only: [:index, :show, :create, :update]
+  resources :books, only: [:index, :show, :create, :update, :destroy]
   # custom like route
   patch "/books/:id/like", to: "books#increment_likes"
 end

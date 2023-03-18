@@ -43,6 +43,21 @@ class BooksController < ApplicationController
         end
     end
 
+    # delete existing book
+
+    def destroy
+        # find book
+        book = Book.find_by(id: params[:id])
+        if book
+            # delete
+            book.destroy
+            render json: {}
+            # head :no_content
+        else
+            render json: {error: "Book not found"}, status: :not_found
+        end
+    end
+
 
 
 
