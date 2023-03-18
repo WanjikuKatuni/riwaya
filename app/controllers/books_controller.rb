@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     wrap_parameters format: []
 
     # show all books
-    
+
     def index
         render json: Book.all, except: [:created_at, :updated_at], methods: [:summary], status: :ok
     end
@@ -29,10 +29,28 @@ class BooksController < ApplicationController
         render json: book, status: :created
     end
 
+    # edit existing book
+
+    def update 
+        # find
+        book = Book.find_by(id: params[:id])
+        if book
+            # update
+            book.update(book_params)
+            render json: book, status: :accepted
+        else
+            render json: {error: "Book not found"}, status: :not_found
+        end
+    end
+
+
+
     private
 
     def book_params
-        params.permit(:title, :author, :genre)
+        params.permit(:title, :author, :genre, :image, :likes)
     end
+
+
     
 end
