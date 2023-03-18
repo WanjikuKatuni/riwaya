@@ -16,3 +16,6 @@ Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Boo
 Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")
 Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")
 Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")
+Book.create(title:Faker::Book.title, author:Faker::Book.author, genre:Faker::Book.genre, image: "https://upload.wikimedia.org/wikipedia/en/c/cd/Wahala_%28novel%29.jpg")

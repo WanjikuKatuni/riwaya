@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
 
-    def summary 
+    def title_author 
         "#{self.title}: #{self.author}"
     end
 end

@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     # show all books
 
     def index
-        render json: Book.all, except: [:created_at, :updated_at], methods: [:summary], status: :ok
+        render json: Book.all, except: [:id, :created_at, :updated_at], methods: [:title_author], status: :ok
     end
 
     # show book by ID
@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     def show
         book = Book.find_by(id: params[:id])
         if book
-            render json: book,  except: [:created_at, :updated_at], methods: [:summary], status: :ok
+            render json: book,  except: [:id, :created_at, :updated_at], methods: [:title_author], status: :ok
         else
             render json: {error: "Book not found"}, status: :not_found
         end
