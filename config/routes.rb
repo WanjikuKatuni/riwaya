@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 
   # custome routes
   # http verb, url, controller#action
-  get "/books", to: "books#index"
-  get "/books/:id", to: "books#show"
+  # get "/books", to: "books#index"
+  # get "/books/:id", to: "books#show"
 
 
   # resource
-  # resources :books, only: [:index, :show, :create, :new, :edit, :update]
+  resources :books, only: [:index, :show, :create]
 end
