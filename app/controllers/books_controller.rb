@@ -41,7 +41,11 @@ class BooksController < ApplicationController
 
     def create
         book = Book.create(book_params)
-        render json: book, status: :created
+        if book.valid?
+            render json: book, status: :created
+        else
+            render json: book.errors.full_messages
+        end
     end
 
     # edit existing book
